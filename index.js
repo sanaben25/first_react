@@ -7,7 +7,7 @@ let pets = [
 /*  function getAge(pet) {
   return new Date().getFullYear() - pet.bornOn;
 }*/
-const getAge = (pet )=> new Date().getFullYear() - pet.bornOn;
+const getAge = pet => new Date().getFullYear() - pet.bornOn;
 //let petsWithAge = [];
 /*for (var i = 0; i < pets.length; i++) {
   var pet = pets[i];
@@ -16,13 +16,13 @@ const getAge = (pet )=> new Date().getFullYear() - pet.bornOn;
   petsWithAge.push(pet);
 }
 */
-const petsWithAge = pets.map(function(pet){
+let petsWithAge = pets.map(pet =>{
   pet.age = getAge(pet);
     //console.log(pet);
    return pet;
 });
 
-console.log(petsWithAge);
+console.log(petsWithAge, 'ggg');
 
 /*let dogs = [];
 for (var i = 0; i < pets.length; i++) {
@@ -31,11 +31,13 @@ for (var i = 0; i < pets.length; i++) {
     dogs.push(pet);
   }
 }*/
+//first essay
+//let dogs = pets.filter(pet=>{return pet.type === "dog"});
+let dogs = pets.filter(pet=>(pet.type === "dog"));
 
-const dogs = pets.filter((pet)=>{return pet.type === "dog"});
 
 
-console.log(dogs);
+console.log(dogs, 'rr');
 
 /*var jasper;
 for (var i = 0; i < pets.length; i++) {
@@ -44,7 +46,7 @@ for (var i = 0; i < pets.length; i++) {
     jasper = pet;
   }
 }*/
-const jasper = pets.find((pet) => {return pet.name === "Jasper"});
+let jasper = pets.find(pet =>  (pet.name === "Jasper"));
 
-console.log(jasper);
+console.log(jasper, 'oo');
 console.log(`Jasper is  ${jasper.age}  years old`);
